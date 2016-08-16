@@ -10,7 +10,7 @@ class ItemBox extends React.Component {
                 <ProjectDetail/>
             </div>
         );
-        
+
     }
 }
 var OpenDate=React.createClass({
