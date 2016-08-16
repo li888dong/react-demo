@@ -1,0 +1,51 @@
+.colBox{
+    display: flex;
+    flex-flow: column;
+}
+.rowBox{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.profitBox{
+    background: #D80C18;
+    composes:colBox;
+    justify-content: space-around;
+    color: #e3e3e3;
+    height:130px;
+    font-size: 12px;
+}
+.profitInfoBox{
+    composes:colBox;
+    width: 33%;
+    text-align: center;
+}
+.link{
+    composes:rowBox;
+    justify-content: flex-end;
+    flex-grow: 2;
+}
+a{    color: #e3e3e3;
+}
+.expectIncome{
+    composes:rowBox;
+    justify-content: center;
+}
+.dealInfo{
+    composes:rowBox;
+    justify-content:space-around ;
+}
+.x3{
+    composes:colBox;
+    justify-content: space-around;
+    flex-grow: 5;
+}
+.nextPeriod{
+    composes:rowBox;
+    justify-content: space-around;
+    height: 50px;
+    background: white;
+    padding-top: 20px;
+    color: #e1e1e1;
+    font-size: 12px;
+    margin-top: 10px;
+}

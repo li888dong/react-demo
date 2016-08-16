@@ -6,50 +6,25 @@ class App extends React.Component {
    render() {
       return (
 		  <div>
-         	<header className={app.flex}>
-				<ExpectIncome/>
-				<DealInfo/>
-			</header>
+			  <ProfitBox/>
 			  <ItemBox/>
 		  </div>
       );
    }
 }
-var ExpectIncome=React.createClass({
+var ProfitBox=React.createClass({
 	getInitialState:function(){
-		return {
-			_expectRate : ''
-		}
-	},
-	componentDidMount: function() {
-		$.get('./secum_response.json', function(data) {
-			var d=data;
-			this.setState({
-				_expectRate:d.info.expectRate
-			});
-		}.bind(this));
-	},
-	render:function(){
-		return(
-		<div className={app.col}>
-			<p className={app.font}>{this.state._expectRate}<span>%</span></p>
-			<p>预期年化收益率</p>
-		</div>
-		)
-	}
-});
-
-var DealInfo=React.createClass({
-	getInitialState:function(){
-		return {
+		return{
+			_expectRate : '-',
 			_firstStartAmount : '',
 			_prodTerm:''
 		}
 	},
-	componentDidMount: function() {
-		$.get('./secum_response.json', function(data) {
+	componentDidMount:function(){
+		$.get('./secum_response.json',function(data){
 			var d=data;
 			this.setState({
+				_expectRate:d.info.expectRate,
 				_firstStartAmount:d.info.firstStartAmount,
 				_prodTerm:d.info.prodTerm
 			});
@@ -57,55 +32,21 @@ var DealInfo=React.createClass({
 	},
 	render:function(){
 		return(
-			<div  className={app.row}>
-				<FirstStartAmount firstStartAmount={this.state._firstStartAmount}/>
-				<ProdTerm prodTerm={this.state._prodTerm}/>
-			</div>
-		)
-	}
-});
-var FirstStartAmount=React.createClass({
-	/*getInitialState:function(){
-		return {
-			_firstStartAmount : ''
-		}
-	},
-	componentDidMount: function() {
-		$.get('./secum_response.json', function(data) {
-			var d=data;
-			this.setState({
-				_firstStartAmount:d.info.firstStartAmount
-			});
-		}.bind(this));
-	},*/
-	render:function(){
-		return(
-			<div className={app.itemSize}>
-				<p>{this.props._firstStartAmount}</p>
-				<p>首次起投金额(元)</p>
-			</div>
-		)
-	}
-});
-var ProdTerm=React.createClass({
-	/*getInitialState:function(){
-		return {
-			_prodTerm:'',
-		}
-	},
-	componentDidMount: function() {
-		$.get('./secum_response.json', function(data) {
-			var d=data;
-			this.setState({
-				_prodTerm : d.info.prodTerm,
-			});
-		}.bind(this));
-	},*/
-	render:function(){
-		return(
-			<div className={app.borderLeft}>
-				<p>{this.props._prodTerm}</p>
-				<p>项目周期</p>
+			<div className={app.flex}>
+				<div className={app.col}>
+					<p className={app.font}>{this.state._expectRate}<span>%</span></p>
+					<p>预期年化收益率</p>
+				</div>
+				<div  className={app.row}>
+					<div className={app.itemSize}>
+						<p>{this.state._firstStartAmount}</p>
+						<p>首次起投金额(元)</p>
+					</div>
+					<div className={app.borderLeft}>
+						<p>{this.state._prodTerm}</p>
+						<p>项目周期</p>
+					</div>
+				</div>
 			</div>
 		)
 	}

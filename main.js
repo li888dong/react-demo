@@ -4,7 +4,7 @@ import { Router, Route, Link, hashHistory  } from 'react-router';
 
 
 import App from './App/App.jsx';
-import ItemBox from './ItemBox/ItemBox.jsx';
+import It from './It/It.jsx';
 
 const Body = React.createClass({
     render() {
@@ -13,9 +13,8 @@ const Body = React.createClass({
                 {/* 把`a`标签换成`Link`标签 */}
                 <ul>
                     <li><Link to="/App">App</Link></li>
-                    <li><Link to="/ItemBox">Item</Link></li>
+                    <li><Link to="/It">It</Link></li>
                 </ul>
-
                 {/*
                  把`<Child>`替换成`this.props.children`
                  路由会渲染正确的组件
@@ -27,10 +26,10 @@ const Body = React.createClass({
 });
 
 render((
-    <Router>
+    <Router history={hashHistory}>
         <Route path="/" component={Body}>
-            <Route path="App" component={App} />
-            <Route path="ItemBox" component={ItemBox} />
+            <Route path="/App" component={App} />
+            <Route path="/It" component={It} />
         </Route>
     </Router>
 ), document.getElementById('app'));
