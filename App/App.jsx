@@ -21,7 +21,7 @@ var ProfitBox=React.createClass({
 		}
 	},
 	componentDidMount:function(){
-		$.get('./secum_response.json',function(data){
+		$.get('../lib/secum_response.json',function(data){
 			var d=data;
 			this.setState({
 				_expectRate:d.info.expectRate,

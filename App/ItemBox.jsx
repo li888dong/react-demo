@@ -20,7 +20,7 @@ var OpenDate=React.createClass({
       }
     },
     componentDidMount: function() {
-        $.get('./secum_response.json', function(data) {
+        $.get('../lib/secum_response.json', function(data) {
             var d=data;
             this.setState({
                 _openDate:d.info.openDate
