@@ -120,7 +120,7 @@ var Chart=React.createClass({
                         data: [0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6]
                     },
                     {
-                        type:'area',
+                        type:'line',
                         name: 'London',
                         data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0]
                     }
