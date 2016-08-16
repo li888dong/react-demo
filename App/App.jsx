@@ -1,14 +1,17 @@
 import React from 'react';
 import app from '../css/App.css';
+import ItemBox from './ItemBox.jsx';
 
 class App extends React.Component {
    render() {
       return (
+		  <div>
          	<header className={app.flex}>
 				<ExpectIncome/>
 				<DealInfo/>
 			</header>
-
+			  <ItemBox/>
+		  </div>
       );
    }
 }
