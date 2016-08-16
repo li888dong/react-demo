@@ -1,0 +1,11 @@
+.item{
+    padding: 12px 15px;
+    margin-top: 7px;
+    background: #ffffff;
+    line-height: 110%;
+    font-size: 14px;
+
+}
+.floatR{
+    float: right;
+}
