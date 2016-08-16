@@ -1,0 +1,34 @@
+
+.flex{
+	display:flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	text-align: center;
+	align-items:center;
+	margin: 18px 0 25px 0;
+	height: 200px;
+	background: #ffffff;
+}
+.col{
+	display:flex;
+	flex-flow: column nowrap;
+}
+.row{
+	display:flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	width: 100%;
+}
+.itemSize{
+	width:100%;
+	composes:col;
+}
+.borderLeft{
+	border-left: 1px solid black;
+	composes:itemSize;
+}
+.font{
+	padding: 25px;
+	font-weight: bold;
+	color: red;
+}
