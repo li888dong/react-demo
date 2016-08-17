@@ -2,6 +2,7 @@ import React from 'react';
 import Item from '../css/ItemBox.css';
 import ItemBox from '../App/ItemBox.jsx';
 import Itcss from '../css/Itcss.css';
+import Highcharts from 'highcharts'
 class It extends React.Component {
     render() {
         return (

@@ -5,7 +5,7 @@ import { Router, Route, Link, hashHistory  } from 'react-router';
 
 import App from './App/App.jsx';
 import It from './It/It.jsx';
-
+require('./css/root.css');
 const Body = React.createClass({
     render() {
         return (
@@ -26,6 +26,7 @@ const Body = React.createClass({
 });
 
 render((
+
     <Router history={hashHistory}>
         <Route path="/" component={Body}>
             <Route path="/App" component={App} />
