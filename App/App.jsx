@@ -22,12 +22,17 @@ var ProfitBox=React.createClass({
 	componentDidMount:function(){
 		$.get('../lib/secum_response.json',function(data){
 			var d=data;
-			this.setState({
-				_expectRate:d.info.expectRate,
-				_firstStartAmount:d.info.firstStartAmount,
-				_prodTerm:d.info.prodTerm
-			});
+			if (this.isMounted) {
+				this.setState({
+					_expectRate: d.info.expectRate,
+					_firstStartAmount: d.info.firstStartAmount,
+					_prodTerm: d.info.prodTerm
+				});
+			}
 		}.bind(this));
+	},
+	clickHandle:function(e){
+		alert(e.clientX)
 	},
 	render:function(){
 		return(
@@ -39,7 +44,7 @@ var ProfitBox=React.createClass({
 				<div  className={app.row}>
 					<div className={app.itemSize}>
 						<p>{this.state._firstStartAmount}</p>
-						<p>首次起投金额(元)</p>
+						<p onClick={this.clickHandle}>首次起投金额(元)</p>
 					</div>
 					<div className={app.borderLeft}>
 						<p>{this.state._prodTerm}</p>
